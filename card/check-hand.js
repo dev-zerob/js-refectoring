@@ -2,14 +2,28 @@
 const checkHand = function(hand){
   if (isPair(hand)) {
     return 'pair';
+  } else if (isTriple(hand)){
+    return 'three of a kind';
+  } else if (isQuadruple(hand)) {
+    return 'four of a kind';
   } else {
-    return 'three of a kind'
+    return 'high card';
   }
 };
 
 // Finds a pair
 const isPair = function(hand) {
   return multiplesIn(hand) === 2;
+}
+
+// Finds a Triple
+const isTriple = function(hand) {
+  return multiplesIn(hand) === 3;
+}
+
+// Finds a Quadruple
+const isQuadruple = function(hand) {
+  return multiplesIn(hand) === 4;
 }
 
 // Finds a duplicate

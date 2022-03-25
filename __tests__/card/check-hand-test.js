@@ -9,6 +9,14 @@ describe('checkHand()', () => {
   it('handles three of a kind', () => {
     expect(card.checkHand(['3-H', '3-C', '3-D', '5-H', '2-H'])).toBe('three of a kind');
   });
+  
+  it('handles four of a kind', () => {
+    expect(card.checkHand(['3-H', '3-C', '3-D', '3-H', '2-H'])).toBe('four of a kind');
+  });
+
+  it('handles high card', () => {
+    expect(card.checkHand(['1-H', '2-C', '3-D', '4-H', '5-H'])).toBe('high card');
+  });
 });
 
 describe('isPair()', () => {
